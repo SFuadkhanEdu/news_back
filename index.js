@@ -42,7 +42,7 @@ app.delete("/news/:id", deleteNewsByID);
 
 app.listen(port, async () => {
   await mongoose
-    .connect("mongodb+srv://test:test@test.xf5kk.mongodb.net/")
+    .connect(process.env.MONGODB_URI+"/")
     .then(() => console.log("connected to DB"))
     .catch((err) => console.log("not conected to DB ", err));
 
